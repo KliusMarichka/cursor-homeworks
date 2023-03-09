@@ -11,10 +11,7 @@ let skipEven = confirm('Пропускати парні числа?');
 let sum = 0;
 
 while (N < M) {
-    if (skipEven == true && (N % 2) == 0) {
-        sum = sum + N;
-        N = N + 1;
-    } else if ((skipEven == true && (N % 2) !== 0)) {
+    if ((skipEven == true && (N % 2) !== 0)) {
         N = N + 2;
         sum = sum + N;
     } else {
