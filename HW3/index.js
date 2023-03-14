@@ -1,3 +1,17 @@
+
+// Задача 2
+function getPow(number, power) {
+    let numberPow;
+    numberPow = number * number;
+    for (let i=1; i<=power-2; i++) {
+        numberPow = numberPow * number;
+    }  
+    console.log(numberPow);
+}
+
+getPow(3, 9);
+
+
 //Задача 1
 
 function getMaxDigit(number) {
@@ -21,20 +35,8 @@ function getMaxDigit(number) {
     }
     console.log(maxNum);
 }
-getMaxDigit(1062);
+getMaxDigit(1092);
    
-// Задача 2
-function getPow(number, power) {
-    let numberPow;
-        for (i=0; i<=power; i++) {
-        numberPow = number * number;
-        numberPow = numberPow * number;
-        }  
-    console.log(numberPow);
-}
-
-getPow(2, 3);
-
 // Задача 3
 function startCapital(name) {
    const letters = name.split('');
