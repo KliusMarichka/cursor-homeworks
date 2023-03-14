@@ -1,3 +1,34 @@
+//Задача 1
+
+function getMaxDigit(number) {
+
+    let strNum = number.toString();
+    let digitsCount = strNum.length;
+    let num;
+    let num2;
+    let maxNum;
+    
+    for (let i=0; i<digitsCount-1; i++) {
+       
+       num = strNum.charAt(i);
+       num2 = strNum.charAt(i+1);
+   
+       if (num>=num2) {
+           maxNum = num;
+           
+       } else {
+           maxNum = num2;
+   
+     }
+    }
+    console.log(maxNum);
+   }
+   
+    getMaxDigit(1062);
+   
+// Задача 2
+
+
 // Задача 3
 function startCapital(name) {
    const letters = name.split('');
@@ -17,7 +48,7 @@ function countNetSalary(grossPay) {
     console.log(netPay);
 }
 
-countNetSalary(20000);
+countNetSalary(10000);
 
 //Задача 5
 
@@ -50,4 +81,3 @@ function countLetters (word, L) {
 
 countLetters("абабагаламага", "а");
 
-//Задача 
