@@ -14,20 +14,26 @@ function getMaxDigit(number) {
        num2 = strNum.charAt(i+1);
    
        if (num>=num2) {
-           maxNum = num;
-           
+           maxNum = num;       
        } else {
            maxNum = num2;
-   
-     }
+       }
     }
     console.log(maxNum);
-   }
-   
-    getMaxDigit(1062);
+}
+getMaxDigit(1062);
    
 // Задача 2
+function getPow(number, power) {
+    let numberPow;
+        for (i=0; i<=power; i++) {
+        numberPow = number * number;
+        numberPow = numberPow * number;
+        }  
+    console.log(numberPow);
+}
 
+getPow(2, 3);
 
 // Задача 3
 function startCapital(name) {
