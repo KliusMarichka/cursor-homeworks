@@ -10,35 +10,8 @@ return randomNumbers
 
 console.log(getRandomArray(15, 1, 100));
 
-// Задача 2
-
-/*const numRow =[];
-function getModa (...numbers) {
-  numbers.filter ((number) => {
-    if (number % parseInt(number) === 0) {
-      numRow.push(number)
-    }
-    return numRow
-  })    
-  const sorted = numRow.sort((a, b) => a - b)
-  return sorted
-  let num1;
-  let num2 = 0;
-  let num3;
-    for (i = 0; i<numRow.length; i++) {
-      num1 = numRow[i];
-      if (num1 = numRow[i+1]) {
-      num2 = num2 + 1;
-      } else {
-
-      }
-  }
-}
-console.log(getModa(2, 34, 2, 56.1, 3, 2, 3.1, 78));
-*/
-
 // Задача 3
-let count;
+
 const numNums =[];
 function getAverage (...numbers) {
   numbers.filter ((number) => {
@@ -55,6 +28,33 @@ function getAverage (...numbers) {
   }
   
   console.log(getAverage(6, 2, 3.1, 2, 2.1, 2));
+
+  // Задача 4
+
+const numRow = [];
+
+function getMedian(...numbers) {
+  numbers.filter ((number) => {
+    if (number % parseInt(number) === 0) {
+      numRow.push(number)
+    }
+    return numRow
+    })
+
+  numRow.sort((a, b) => a - b)
+
+  let length = numRow.length;
+  if (length % 2 !==0) {
+    medianIndex = Math.floor(length / 2);
+    median = numRow[medianIndex];   
+  } else {
+    medianIndex = length / 2;
+    median = (numRow[medianIndex] + numRow[medianIndex -1])/2;
+  }
+return median
+}
+
+console.log(getMedian(1, 2, 3, 4));
 
   // Задача 5
   function filterEvenNumbers(...numbers) {
@@ -86,3 +86,4 @@ function getDividedByFive(...numbers) {
 }
 
 console.log(getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
+
