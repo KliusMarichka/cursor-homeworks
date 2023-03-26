@@ -75,3 +75,14 @@ function getPositiveNumbers(...numbers) {
 }
 
 console.log(getPositiveNumbers(-1, 3, 2, 0, -4, 9, 6));
+
+// Задача 7
+
+function getDividedByFive(...numbers) {
+  const byFiveNums = numbers.filter((number) => {
+    return number % 5 === 0
+  })
+  return byFiveNums
+}
+
+console.log(getDividedByFive(6, 2, 55, 11, 78, 2, 55, 77, 57, 87, 23, 2, 56, 3, 2));
