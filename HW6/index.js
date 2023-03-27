@@ -24,17 +24,6 @@ const students = [{
     }
     }];
 
-    // console.log(students[0].name, students[1].name, students[2].name);
-
-// Створіть функцію getSubjects(students[0] --> ["Math", "Algorithms", "Data science"] - яка повертає список предметів
-// для конкретного студента. Назву предмету необхідно повертати з великої літери, а _ – замінити на пробіл
-
-// let keys = Object.keys(students[0]);
-// console.log(keys);
-
-// console.log(students[0].subjects, students[1].subjects, students[2].subjects);
-
-
 function getSubjects(student) {
     let subjects = Object.keys(student.subjects);
     const everySubject = subjects.map((subject) => {
