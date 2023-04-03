@@ -24,6 +24,8 @@ const students = [{
     }
     }];
 
+// Task 1
+
 function getSubjects(student) {
     let subjects = Object.keys(student.subjects);
     const everySubject = subjects.map((subject) => {
@@ -38,3 +40,22 @@ function getSubjects(student) {
 }
 
 console.log(getSubjects(students[0]));
+
+// Task 2
+
+function getAverageMark(student) {
+    const marksOfSubjects = Object.values(student['subjects']);
+    let marks1 = Object.values(marksOfSubjects[0]);
+    let marks2 = Object.values(marksOfSubjects[1]);
+    let marks3 = Object.values(marksOfSubjects[2]);
+    let allMarks = marks1.concat(marks2).concat(marks3);
+    
+        let averageMark = allMarks.reduce((prevNumber, number) => {
+            const res = prevNumber + number;
+            return res 
+          }, 0)/ allMarks.length
+return averageMark.toFixed(2)
+
+}
+ 
+console.log(getAverageMark(students[0]));
