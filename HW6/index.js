@@ -49,13 +49,77 @@ function getAverageMark(student) {
     let marks2 = Object.values(marksOfSubjects[1]);
     let marks3 = Object.values(marksOfSubjects[2]);
     let allMarks = marks1.concat(marks2).concat(marks3);
-    
-        let averageMark = allMarks.reduce((prevNumber, number) => {
-            const res = prevNumber + number;
-            return res 
-          }, 0)/ allMarks.length
-return averageMark.toFixed(2)
-
+    let averageMark = allMarks.reduce((prevNumber, number) => {
+        const res = prevNumber + number;
+        return res 
+        }, 0)/ allMarks.length
+    return averageMark.toFixed(2)
 }
  
 console.log(getAverageMark(students[0]));
+
+// Task 3
+ 
+function getStudentInfo (student) {
+    let studentInfo = Object.entries(student);
+    let info = Object.fromEntries(studentInfo);
+    info['averageMark'] = getAverageMark(student);
+    const infoOfTheStudent = [];
+    infoOfTheStudent.push(info.name, info.course, info.averageMark);
+    return infoOfTheStudent
+}
+
+console.log(getStudentInfo(students[2]));
+
+// Task 4
+function getStudentsNames(students) {
+    const names = [];
+    for (let i = 0; i < 3; i++){
+        names.push(students[i].name)
+    }
+    const studentsNames = names.sort((a, b) => a < b ? -1 : 1 ); 
+    return studentsNames
+}
+
+console.log(getStudentsNames(students));
+
+// Task 5
+
+function getBestStudent(students) {
+    const arrOfStudentsAndMarks = [];    
+    for (let i = 0; i < 3; i++){
+        let tempArr = [];
+        tempArr.push(getAverageMark(students[i]));
+        tempArr.push(students[i].name);
+        arrOfStudentsAndMarks.push(tempArr);
+    }
+    let bestMark = arrOfStudentsAndMarks.sort((a, b) => a > b ? -1 : 1);   
+    return bestMark[0][1] 
+}
+
+console.log(getBestStudent(students));
+
+// Task 6
+
+let word;
+let wordLetters = {};
+let wasFound;
+
+function calculateWordLetters(word) {
+    word = word.split("");
+    for (let i = 0; i<word.length; i++) {
+        for (key in wordLetters) {
+            if (word[i] === key) {
+                wordLetters[word[i]] = wordLetters[word[i]] + 1;
+                wasFound = true;
+            break
+            }
+        }  
+        if (!wasFound || Object.keys(wordLetters).length === 0 ) {
+            wordLetters[word[i]] = 1;
+        }  
+    }
+    return wordLetters
+}
+
+console.log(calculateWordLetters("тест"));
